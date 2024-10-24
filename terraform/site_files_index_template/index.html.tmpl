@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts</title>
+</head>
+<body>
+    <h1>Welcome to Fun Facts Page!</h1>
+
+    <!-- Button to Fetch Fun Fact -->
+    <button id="get-fact">Get a Fun Fact</button>
+
+    <!-- Display Fun Fact -->
+    <p id="fun-fact"></p>
+
+    <script>
+        document.getElementById("get-fact").addEventListener("click", async () => {
+            try {
+                const response = await fetch("https://${function_app_url}/api/${function_name}");
+                const fact = await response.text();
+                document.getElementById("fun-fact").innerText = fact;
+            } catch (error) {
+                document.getElementById("fun-fact").innerText = "Error fetching fun fact.";
+            }
+        });
+    </script>
+</body>
+</html>
