@@ -23,6 +23,13 @@ variable "function_app_sku" {
   default = null
 }
 
+variable "location" {
+  type    = string
+  description = "Azure region to create resources in"
+
+  default = null
+}
+
 variable "project" {
   description = "Project name"
   type        = string
