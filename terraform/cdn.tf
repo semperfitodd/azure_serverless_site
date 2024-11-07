@@ -42,4 +42,6 @@ resource "azurerm_cdn_endpoint_custom_domain" "this" {
     protocol_type    = "ServerNameIndication"
     tls_version      = "TLS12"
   }
+
+  depends_on = [aws_route53_record.site]
 }

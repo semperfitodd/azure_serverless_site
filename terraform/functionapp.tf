@@ -8,8 +8,6 @@ data "archive_file" "function_code" {
 }
 
 locals {
-  app_file = "App.js"
-
   app_function_os_type = title(var.function_app_os_type)
 
   function_code_directory = "function-code"
